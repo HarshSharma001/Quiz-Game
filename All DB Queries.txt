@@ -1,0 +1,67 @@
+insert into Questions values(01,'Who is the Prime Minister Of India ?', 'Kejriwal', 'PM Modi', 'Neelam Jha', 'Keshav Yadav', 'PM Modi');
+
+insert into Questions values(02,'What is the Capital Of India ?', 'Mirzapur', 'Jounpur', 'Delhi', 'Mumbai', 'Delhi');
+
+insert into Questions values(03,'The game "Asphalt 8" been released in which year ?', '2014', '2012', '2015', '2013', '2013');
+
+insert into Questions values(04,'Which of the following is known as FPS God ?', 'Kaymind', 'Shroud', 'Chacotaco', 'Frogman', 'Shroud');
+
+insert into Questions values(05,'Which of the following team won the PMCO Global Finals ?', 'Xquest', 'All Rejection Gaming', 'Top Esports', 'Purple Mood', 'Top Esports');
+
+insert into Questions values(06,'Which of the following is the creator of track "Moonlight" ?', 'XXXTentacion', 'Hopex', 'Illenium', 'Lost Sky', 'XXXTentacion');
+
+insert into Questions values(07,'In which year the movie "The Avengers" been released ?', '2013', '2012', '2011', '2015', '2012');
+
+insert into Questions values(08,'Which of these track been created by brand "Sickick" ?', 'Bermuda', 'Eternity', 'Infected', 'Both 1st & 3rd', 'Both 1st & 3rd');
+
+insert into Questions values(09,'In which year the game "PUBG" been released ?', '2017', '2016', '2018', 'None Of Them', '2017');
+
+insert into Questions values(10,'Which of the following invented "light bulb" ?', 'Arijit Singh', 'einstein', 'Thomas Alva Edison', 'None Of Them', 'Thomas Alva Edison');
+
+
+
+
+insert into Questions values(11,'Who is honored as Father of Modern Chemistry?', 'Antoine Lavoisier', 'Dr. Rakesh', 'Martin garix', 'Dr. Disrespect', 'Antoine Lavoisier');
+
+insert into Questions values(12,'Who invented periodic table?', 'Stephanie', 'Dmitri Mendeleev', 'Skrillex', 'Charlie Puth', 'Dmitri Mendeleev');
+
+insert into Questions values(13,'Which is the most abundant gas in the earth's atmosphere?', 'Helium', 'Carbon Dioxide', 'Oxygen', 'Nitrogen (78.08%)', 'Nitrogen (78.08%)');
+
+insert into Questions values(14,'Which gas evolved from  paddy fields and marshes?', 'Nitrogen', 'Methane', 'Chlorium', 'Hydrogen', 'Methane');
+
+insert into Questions values(15,'Which toxic element present in automobile exhausts?', 'Hydrocarbons', 'Formaldehyde', 'Lead', 'Benzene', 'Lead');
+
+insert into Questions values(16,'Which gases cause acid rain?', 'Sulphur dioxide', 'Nitrogen oxides', 'Hydrogen', 'Both 1st & 2', 'Both 1st & 2');
+
+insert into Questions values(17,'Which metal is used in the making of microchips?', 'Actinium', 'Silicon', 'Bismuth', 'None Of Them', 'Silicon');
+
+insert into Questions values(18,'What is the toxicity caused by silicon called?', 'Silicosis', 'Eternity', 'Infected', 'Both 1st & 3rd', 'Silicosis');
+
+insert into Questions values(19,'Which polymer is used to manufacture electric switches, computer disks etc.?', 'HDPE', 'Bakelite', 'LDPE', 'None Of Them', 'Bakelite');
+
+insert into Questions values(20,'Which chemical is used to make rain coats?', 'Borax', 'Bleach', 'PVC', 'Freon', 'PVC');
+
+
+
+
+insert into Questions values(21,'Which type of plastics can be recycled?', 'Thermoplastics', 'PETE', 'HDPE', 'PVC', 'Thermoplastics');
+
+insert into Questions values(22,'Which element is a liquid at ordinary temperature?', 'Nitrogen', 'Mercury', 'Helium', 'Lithium', 'Mercury');
+
+insert into Questions values(23,'What is the chemical name of baking soda?', 'Helium', 'Ionic', 'Sodium', 'Sodium bicarbonate', 'Sodium bicarbonate');
+
+insert into Questions values(24,'What is sodium carbonate commonly known as?', 'Washing soda', 'soda ash', 'Chlorium', 'Both 1 & 2', 'Both 1 & 2');
+
+insert into Questions values(25,'What is sodium chloride?', 'Hydrocarbons', 'Formaldehyde', 'Table salt', 'Benzene', 'Table salt');
+
+insert into Questions values(26,'What is table sugar?', 'Sulphur dioxide', 'Nitrogen oxides', 'Hydrogen', 'Cane sugar', 'Cane sugar');
+
+insert into Questions values(27,'What is the element present on lead pencils?', 'Carbon (graphite)', 'Silicon', 'Bismuth', 'None Of Them', 'Carbon (graphite)');
+
+insert into Questions values(28,'Which gas is found in soda water?', 'Nitrogen', 'Carbon dioxide', 'Infected', 'Both 1st & 3rd', 'Carbon dioxide');
+
+insert into Questions values(29,'What is the solvent of gold?', 'HDPE', 'Aquaregia', 'LDPE', 'None Of Them', 'Aquaregia');
+
+insert into Questions values(30,'Which chemical is the reason behind the brown colour of human faces?', 'Borax', 'Bleach', 'Bilirubin', 'Freon', 'Bilirubin');
+
+
