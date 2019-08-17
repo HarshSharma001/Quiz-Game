@@ -1,0 +1,27 @@
+For Player's name :
+
+
+
+create table Players(Name varchar(30));
+
+select *from Players;
+
+
+delete from Players where Name='';
+
+
+
+The Question Table :
+
+
+
+create table Questions(Serial_No varchar(2) PRIMARY KEY, Questions varchar(1000), Option_1 varchar(20), Option_2 varchar(20), Option_3 varchar(20), Option_4 varchar(20), Answer varchar(20));
+
+
+insert into Questions values(01,'Who is the Prime Minister Of India ?', 'Kejriwal', 'PM Modi', 'Neelam Jha', 'Keshav Yadav', 'PM Modi');
+
+
+insert into Questions values(02,'What is the Capital Of India ?', 'Mirzapur', 'Jounpur', 'Delhi', 'Mumbai', 'Delhi');
+
+
+select *from Questions;
