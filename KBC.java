@@ -1,7 +1,11 @@
+import jaco.mp3.player.MP3Player;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.*;
 
 import java.util.*;  
@@ -12,7 +16,7 @@ import javax.swing.event.DocumentListener;
 
 
 
-class KBC 
+class QuizGame 
 {
     public static void main(String args[])
     {
@@ -22,22 +26,35 @@ class KBC
 }
 
 
-class PMCO extends JFrame implements ActionListener
+class PMCO implements ActionListener
 {
     //Declaring All The Needed Components Here//
     
     
     // 1st Frame Components //
     
-    JFrame f1 = new JFrame("KBC");
+    ImageIcon ic = new ImageIcon("C:\\Users\\Harsh Sharma\\Downloads\\texture-wallpaper-e23.jpg");
+     
+    ImageIcon ic6 = new ImageIcon("E:\\Wallpapers\\App Icon.png");
+     
+    
+    
+    JLabel lb = new JLabel(ic);
+      
+    JLabel lb16 = new JLabel();
+    
+    
+    
+    JFrame f1 = new JFrame("Quiz Game Version 1.0.0.0");
+    
+    Font font3 = new Font("Century", Font.BOLD,17);
     
     JButton b1 = new JButton("New Game");
     JButton b2 = new JButton("Controls");
     JButton b3 = new JButton("About");
+    JButton music = new JButton("Music");
     JButton b4 = new JButton("Quit");
     
-    
-    JButton b10 = new JButton("");         //This button is created purposely because with null layout there are some kind of issues So the last button we would add will not display, that's why we created an extra button//
     
     
     //1st Frame Components Ending//
@@ -45,6 +62,15 @@ class PMCO extends JFrame implements ActionListener
     
     
     // 2nd Frame Components (For user to fill and save his name in the game)//
+    
+    ImageIcon ic7 = new ImageIcon("E:\\Wallpapers\\App Icon 1.png");
+     
+    
+    JLabel lb17 = new JLabel(ic);
+      
+    JLabel lb18 = new JLabel();
+    
+    
     
     JFrame f2 = new JFrame("Registeration");
     
@@ -56,6 +82,8 @@ class PMCO extends JFrame implements ActionListener
     
     JProgressBar pb;
     
+    JButton cancel = new JButton("Cancel");
+    
     JLabel lb15 = new JLabel("Loading...");
     
     javax.swing.Timer t = new javax.swing.Timer(250,this);       //I've used the package itself over here, because a class named as Timer class also present in io package//
@@ -64,7 +92,13 @@ class PMCO extends JFrame implements ActionListener
     
     
     
-    // 3rd Frame Components (We will directly drag their appearance from Database)//
+    // 3rd Frame Components (We will directly Questions and options from Database)//
+     
+    
+    JLabel lb19 = new JLabel(ic);
+      
+    JLabel lb20 = new JLabel();
+    
     
     JFrame f3 = new JFrame("New Game");
     
@@ -85,23 +119,15 @@ class PMCO extends JFrame implements ActionListener
     
     
     
-    // 4rth Frame Components (It will show user the )//
-    
-    JFrame f4 = new JFrame("Game Over");
-    
-    JLabel lb3 = new JLabel("Your Name  :");
-    JLabel lb4 = new JLabel("Your Score :");
-    
-    JButton b7 = new JButton("Play Again");
-    JButton b8 = new JButton("Exit");
-    
-    
-    //4rth Frame Components Ending//
-    
-    
     
     
     //5th Frame for Controls Option//
+
+    
+    JLabel lb23 = new JLabel(ic);
+      
+    JLabel lb24 = new JLabel();
+    
     
     JFrame f5 = new JFrame("Controls");
     
@@ -122,13 +148,18 @@ class PMCO extends JFrame implements ActionListener
     
     
     
-    //6th Frame for Controls Option//
+    //6th Frame for About Option//
+   
+    JLabel lb25 = new JLabel(ic);
+      
+    JLabel lb26 = new JLabel();
+    
     
     JFrame f6 = new JFrame("About");
     
     JLabel lb9 = new JLabel("Hello there,");
     
-    JLabel lb10 = new JLabel("This game is known as KBC.");
+    JLabel lb10 = new JLabel("This game is known as Quiz Game.");
     
     JLabel lb11 = new JLabel("This game is being Developed By an Engineering student named as HARSH SHARMA");
     
@@ -155,6 +186,35 @@ class PMCO extends JFrame implements ActionListener
     
     //7th Frame Ending//
     
+    
+    
+    
+    //8th Frame for Music Option//
+   
+        
+    ImageIcon ic8 = new ImageIcon("E:\\Wallpapers\\Sound On.jpg");
+    
+    ImageIcon ic9 = new ImageIcon("E:\\Wallpapers\\Sound OFF.jpg");
+    
+
+    
+    JFrame f8 = new JFrame("Music");
+    
+    JLabel Turn_On = new JLabel("Turn On");
+    
+    JLabel Turn_Off = new JLabel("Turn Off");
+    
+    
+    
+    JButton Go_Back = new JButton("Go Back");
+    
+    JButton Switch_On = new JButton("");
+    
+    JButton Switch_Off = new JButton("");
+     
+     
+    //8th Frame Ending//
+    
      
     
     
@@ -172,11 +232,26 @@ class PMCO extends JFrame implements ActionListener
     
     Font font2 = new Font("Century", Font.BOLD,22);
     
+    Font font4 = new Font("Century", Font.BOLD,22);
+    
+    public String song="E:\\\\NCS Songs\\\\10convert.com_DEATH-NOTE-Trap-Remix_kyJ7heXazss.mp3";
+ 
     
     
+    //MP3 File Code Here//
+        
+        MP3Player mp3 = new MP3Player(new File(song));
+    
+    //MP3 File Code Here//
+        
     
     void proceed()
     {
+        
+        if(mp3.isStopped())
+        {
+            mp3.setRepeat(true);
+        }
         
         //To Suffle the Elements//
         
@@ -220,51 +295,75 @@ class PMCO extends JFrame implements ActionListener
             
         a=pm.getRandomElement(list);
             
-          //System.out.println("Shuffled Number :" +a);  
         
-          //Ending of Shuffle Code Here//
-          
-          
+        //Ending of Shuffle Code Here//
+         
+       
+        
+       //MP3 File code //
+        
+        mp3.play();
+        
+        //MP3 File code Ended//
           
         
         //1st Frame Designing //
         
         b1.setPreferredSize(new Dimension(90,40));
-        b1.setBounds(200, 50, 130, 50);
+        b1.setBounds(265, 70, 130, 50);
         
         b2.setPreferredSize(new Dimension(90,40));
-        b2.setBounds(200, 150, 130, 50);
+        b2.setBounds(265, 170, 130, 50);
         
         b3.setPreferredSize(new Dimension(90,40));
-        b3.setBounds(200, 250, 130, 50);
+        b3.setBounds(265, 350, 130, 50);
+        
+        music.setPreferredSize(new Dimension(90,40));
+        music.setBounds(265, 450, 130, 50);
         
         b4.setPreferredSize(new Dimension(90,40));
-        b4.setBounds(200, 350, 130, 50);
+        b4.setBounds(265, 550, 130, 50);
         
-        b10.setPreferredSize(new Dimension(90,40));
-        b10.setBounds(200, 450, 130, 50);
+        
+        b1.setBackground(Color.white);
+        b2.setBackground(Color.white);
+        b3.setBackground(Color.white);
+        music.setBackground(Color.white);
+        b4.setBackground(Color.white);
+       
+      
+        
+        lb.setBounds(00,00,700,670);
+        
+        b1.setFont(font3);
+        b2.setFont(font3);
+        b3.setFont(font3);
+        music.setFont(font3);
+        b4.setFont(font3);
         
         
         
         b1.addActionListener(this);
         b2.addActionListener(this);
         b3.addActionListener(this);
+        music.addActionListener(this);
         b4.addActionListener(this);
         
         
         f1.add(b1);
         f1.add(b2);
         f1.add(b3);
+        f1.add(music);
         f1.add(b4);
-        f1.add(b10);
+        f1.add(lb);
+        f1.add(lb16);
     
         
-        
-
-        
+        f1.setIconImage(ic6.getImage());
+        f1.setLocation(350,30);
         f1.setVisible(true);
         f1.setLayout(null);
-        f1.setSize(550,550);
+        f1.setSize(700,700);
         f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //1st Frame Designing Ended//
@@ -312,27 +411,42 @@ class PMCO extends JFrame implements ActionListener
         
         
         lb1.setPreferredSize(new Dimension(90,40));
-        lb1.setBounds(130, 50, 130, 50);
-        lb1.setFont(font);
+        lb1.setBounds(120, 50, 130, 50);
+        lb1.setFont(font4);
+        lb1.setForeground(Color.white);
+  
+        
         
         t1.setPreferredSize(new Dimension(90,40));
         t1.setBounds(200, 60, 130, 30);
+        t1.setFont(font3);
         
         
         b5.setPreferredSize(new Dimension(90,40));
         b5.setBounds(210, 130, 100, 40);
+        b5.setBackground(Color.white);
         
         pb = new JProgressBar(0,20);
         pb.setVisible(false);
-        pb.setBounds(210, 200, 100, 30);
+        pb.setBounds(210, 280, 100, 30);
+        
+        
+        cancel.setVisible(true);
+        cancel.setBounds(210, 280, 100, 30);
+        cancel.addActionListener(this);
+        cancel.setBackground(Color.white);
         
         
         lb15.setPreferredSize(new Dimension(90,40));
-        lb15.setBounds(220, 250, 130, 40);
+        lb15.setBounds(220, 320, 130, 40);
         lb15.setFont(font);
         lb15.setVisible(false);
+        lb15.setForeground(Color.white);
         
         b5.addActionListener(this);
+        b5.setFont(font3);
+        
+        lb17.setBounds(00,00,600,513);
         
         
         f2.add(lb1);
@@ -340,8 +454,13 @@ class PMCO extends JFrame implements ActionListener
         f2.add(b5);
         f2.add(pb);
         f2.add(lb15);
+        f2.add(lb17);
+        f2.add(lb18);
+        f2.add(cancel);
         
         
+        f2.setIconImage(ic7.getImage());
+        f2.setLocation(350,50);
         f2.setVisible(false);
         f2.setLayout(null);
         f2.setSize(550,550);
@@ -357,11 +476,13 @@ class PMCO extends JFrame implements ActionListener
         lb14.setPreferredSize(new Dimension(90,40));
         lb14.setBounds(10, 50, 100, 50);
         lb14.setFont(font2);
+        lb14.setForeground(Color.white);
         
         
         lb2.setPreferredSize(new Dimension(90,40));
         lb2.setBounds(90, 50, 1500, 50);
         lb2.setFont(font2);
+        lb2.setForeground(Color.white);
         
         
         rb1.setPreferredSize(new Dimension(90,40));
@@ -380,9 +501,15 @@ class PMCO extends JFrame implements ActionListener
         rb4.setBounds(90, 250, 500, 50);
         rb4.setFont(font1);
         
+        
+        
         b6.setPreferredSize(new Dimension(90,40));
-        b6.setBounds(90, 300, 100, 40);
+        b6.setBounds(100, 320, 100, 40);
         b6.addActionListener(this);
+        b6.setFont(font3);
+        b6.setBackground(Color.white);
+        
+        lb19.setBounds(00,00,1000,513);
         
         
         bg.add(rb1);
@@ -400,7 +527,11 @@ class PMCO extends JFrame implements ActionListener
         
         f3.add(b6);         //To submit user's Answer//
         
+        f3.add(lb19);
+        f3.add(lb20);
         
+        f3.setIconImage(ic7.getImage());
+        f3.setLocation(250,50);
         f3.setVisible(false);
         f3.setLayout(null);
         f3.setSize(1000,550);
@@ -410,44 +541,35 @@ class PMCO extends JFrame implements ActionListener
         
         
         
-        //4rth Frame Designing //
-        
-        f4.add(lb3);
-        f4.add(lb4);
-        
-        f4.add(b7);
-        f4.add(b8);
-        
-        f4.setVisible(false);
-        f4.setLayout(null);
-        f4.setSize(550,550);
-        f4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        //4rth Frame Designing Ended//
-        
-        
-        
         
         //5th Frame Designing //
         
         lb5.setPreferredSize(new Dimension(90,40));
         lb5.setBounds(20, 50, 130, 100);
         lb5.setFont(font);
+        lb5.setForeground(Color.white);
         
         lb6.setPreferredSize(new Dimension(90,40));
         lb6.setBounds(20, 70, 700, 100);
         lb6.setFont(font);
+        lb6.setForeground(Color.white);
         
         lb7.setPreferredSize(new Dimension(90,40));
         lb7.setBounds(20, 90, 700, 100);
         lb7.setFont(font);
+        lb7.setForeground(Color.white);
         
         lb8.setPreferredSize(new Dimension(90,40));
         lb8.setBounds(20, 110, 700, 100);
         lb8.setFont(font);
+        lb8.setForeground(Color.white);
         
         b9.setPreferredSize(new Dimension(90,40));
         b9.setBounds(20, 200, 100, 30);
+        b9.setBackground(Color.white);
+       
+        
+        lb23.setBounds(00,00,650,600);
         
         b9.addActionListener(this);
         
@@ -458,7 +580,11 @@ class PMCO extends JFrame implements ActionListener
         f5.add(lb7);
         f5.add(lb8);
         f5.add(b9);
+        f5.add(lb23);
+        f5.add(lb24);
         
+        f5.setIconImage(ic6.getImage());
+        f5.setLocation(300,50);
         f5.setVisible(false);
         f5.setLayout(null);
         f5.setSize(600,550);
@@ -475,21 +601,28 @@ class PMCO extends JFrame implements ActionListener
         lb9.setPreferredSize(new Dimension(90,40));
         lb9.setBounds(20, 50, 130, 100);
         lb9.setFont(font);
+        lb9.setForeground(Color.white);
         
         lb10.setPreferredSize(new Dimension(90,40));
         lb10.setBounds(20, 70, 700, 100);
         lb10.setFont(font);
+        lb10.setForeground(Color.white);
         
         lb11.setPreferredSize(new Dimension(90,40));
         lb11.setBounds(20, 90, 800, 100);
         lb11.setFont(font);
+        lb11.setForeground(Color.white);
         
         lb12.setPreferredSize(new Dimension(90,40));
         lb12.setBounds(20, 110, 800, 100);
         lb12.setFont(font);
+        lb12.setForeground(Color.white);
         
         b11.setPreferredSize(new Dimension(90,40));
         b11.setBounds(20, 200, 100, 30);
+        b11.setBackground(Color.white);
+        
+        lb25.setBounds(00,00,800,650);
         
         b11.addActionListener(this);
        
@@ -500,13 +633,56 @@ class PMCO extends JFrame implements ActionListener
         f6.add(lb11);
         f6.add(lb12);
         f6.add(b11);
+        f6.add(lb25);
+        f6.add(lb26);
         
+        f6.setIconImage(ic6.getImage());
+        f6.setLocation(250,50);
         f6.setVisible(false);
         f6.setLayout(null);
         f6.setSize(800,550);
         f6.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //6th Frame Designing Ended//
+        
+        
+        
+        
+         //8th Frame Designing //
+        
+       
+        
+        Switch_On.setIcon(ic8);
+        Switch_Off.setIcon(ic9);
+        
+        Go_Back.addActionListener(this);
+        
+        Go_Back.setBackground(Color.white);
+        
+        Switch_On.setBackground(Color.cyan);
+        
+        Switch_Off.setBackground(Color.red);
+        
+        Switch_On.addActionListener(this);
+        
+        Switch_Off.addActionListener(this);
+
+     
+       
+        
+        f8.add(Switch_On);     //Turn On Sound//
+        f8.add(Switch_Off);     //Turn Off Sound//
+        f8.add(Go_Back);     //Go Back Button//
+        
+        
+        f8.setIconImage(ic6.getImage());
+        f8.setLocation(550,300);
+        f8.setVisible(false);
+        f8.setLayout(new FlowLayout());
+        f8.setSize(250,250);
+     
+        
+        //8th Frame Designing Ended//
         
     }
     
@@ -563,13 +739,7 @@ class PMCO extends JFrame implements ActionListener
        
        if(ae.getSource()==b4)
        {
-           f1.setVisible(false);
-           f1.dispose();
-           f2.dispose();
-           f3.dispose();
-           f4.dispose();
-           f5.dispose();
-           f6.dispose();
+           System.exit(0);
        }
        
        
@@ -607,7 +777,7 @@ class PMCO extends JFrame implements ActionListener
       name=t1.getText();
       
       Connection myCon;
-      myCon = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-1ADM7K8:1522:xe", "system", "angiosperm");
+      myCon = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-SD3HA9S:1521:xe", "system", "angiosperm");
       
       Statement st = myCon.createStatement();
       
@@ -617,7 +787,9 @@ class PMCO extends JFrame implements ActionListener
       JOptionPane.showMessageDialog(f2, "Succesfully Registered");
       
       t1.setText("");
-       
+      t1.setEnabled(false);
+      
+      cancel.setVisible(false);
       lb15.setVisible(true);
       pb.setVisible(true);
       t.start();
@@ -785,16 +957,7 @@ class PMCO extends JFrame implements ActionListener
           if(count==10)
         {
            JOptionPane.showMessageDialog(f3,"Your Score :" +score);
-            b6.setVisible(false);
-           lb2.setVisible(false);
-          lb14.setVisible(false);
-           rb1.setVisible(false);
-           rb2.setVisible(false);
-           rb3.setVisible(false);
-           rb4.setVisible(false);
-           f3.dispose();
-           f2.dispose();
-           f1.dispose();
+           System.exit(0);
         }
         
           //Ending of Shuffle Code Here//
@@ -808,7 +971,7 @@ class PMCO extends JFrame implements ActionListener
              
       
       Connection myCon;
-      myCon = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-1ADM7K8:1522:xe", "system", "angiosperm");
+      myCon = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-SD3HA9S:1521:xe", "system", "angiosperm");
       
       Statement st = myCon.createStatement();
       
@@ -834,10 +997,6 @@ class PMCO extends JFrame implements ActionListener
          
           
         
-        
-      
-         
-       
       }
         
   catch(Exception e)
@@ -848,10 +1007,46 @@ class PMCO extends JFrame implements ActionListener
            
         
         
-        
-        
-        
        }
+       
+       
+       if(ae.getSource()==music)
+       {
+           f1.setVisible(true);
+           f8.setVisible(true);
+       }
+       
+       if(ae.getSource()==Go_Back)
+       {
+           f8.setVisible(false);
+           f1.setVisible(true);
+       }
+       
+        if(ae.getSource()==Switch_On)
+       {
+           mp3.play();
+       }
+        
+         if(ae.getSource()==Switch_Off)
+       {
+            if(mp3.isPaused())
+           {
+               mp3.play();
+           }
+           else
+           {    
+           mp3.pause();
+           }
+       }
+         
+         
+       if(ae.getSource()==cancel)
+       {
+           f2.setVisible(false);
+           f1.setVisible(true);
+       }
+       
+       
     }
 }
 
